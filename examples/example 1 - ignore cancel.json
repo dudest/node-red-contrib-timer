@@ -1,0 +1,147 @@
+[
+    {
+        "id": "38a5c6e.079893a",
+        "type": "tab",
+        "label": "timer ignore cancel",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b5e83fc7.69dc8",
+        "type": "debug",
+        "z": "38a5c6e.079893a",
+        "name": "state",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 670,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "6fb05b68.183e3c",
+        "type": "debug",
+        "z": "38a5c6e.079893a",
+        "name": "timer",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 670,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "72a3e721.0cc288",
+        "type": "inject",
+        "z": "38a5c6e.079893a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "cancel",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 134,
+        "y": 196,
+        "wires": [
+            [
+                "cef7e1ee.595258"
+            ]
+        ]
+    },
+    {
+        "id": "84f20a87.3a0308",
+        "type": "inject",
+        "z": "38a5c6e.079893a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 154,
+        "y": 136,
+        "wires": [
+            [
+                "cef7e1ee.595258"
+            ]
+        ]
+    },
+    {
+        "id": "48ce8bab.3c0634",
+        "type": "function",
+        "z": "38a5c6e.079893a",
+        "name": "ignore cancel",
+        "func": "if (msg.topic != 'cancel') {\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 500,
+        "y": 140,
+        "wires": [
+            [
+                "b5e83fc7.69dc8"
+            ]
+        ]
+    },
+    {
+        "id": "cef7e1ee.595258",
+        "type": "timer",
+        "z": "38a5c6e.079893a",
+        "name": "",
+        "topic": "",
+        "timer": "5",
+        "payloadOn": "true",
+        "payloadOnType": "bool",
+        "payloadOff": "false",
+        "payloadOffType": "bool",
+        "x": 330,
+        "y": 160,
+        "wires": [
+            [
+                "48ce8bab.3c0634"
+            ],
+            [
+                "6fb05b68.183e3c"
+            ]
+        ]
+    },
+    {
+        "id": "225ff94.486e486",
+        "type": "comment",
+        "z": "38a5c6e.079893a",
+        "name": "using topic to ignore expiry playload when cancelled by user",
+        "info": "",
+        "x": 300,
+        "y": 60,
+        "wires": []
+    }
+]

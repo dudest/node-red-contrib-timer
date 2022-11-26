@@ -1,0 +1,179 @@
+[
+    {
+        "id": "8af9695e.73126",
+        "type": "tab",
+        "label": "timer msg propegation",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "7fa42302.298614",
+        "type": "timer",
+        "z": "8af9695e.73126",
+        "name": "",
+        "topic": "",
+        "timer": "5",
+        "payloadOn": "true",
+        "payloadOnType": "bool",
+        "payloadOff": "false",
+        "payloadOffType": "bool",
+        "x": 390,
+        "y": 160,
+        "wires": [
+            [
+                "3a0fe194.c88de6",
+                "40a132b2.d74a8c",
+                "d2e4815a.235dd"
+            ],
+            [
+                "c830b39e.c0c1"
+            ]
+        ]
+    },
+    {
+        "id": "43d996ab.f0fa48",
+        "type": "inject",
+        "z": "8af9695e.73126",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "foo",
+                "v": "bar",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "object copying",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 210,
+        "y": 140,
+        "wires": [
+            [
+                "7fa42302.298614"
+            ]
+        ]
+    },
+    {
+        "id": "c830b39e.c0c1",
+        "type": "debug",
+        "z": "8af9695e.73126",
+        "name": "timer",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 590,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "3a0fe194.c88de6",
+        "type": "debug",
+        "z": "8af9695e.73126",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 610,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "40a132b2.d74a8c",
+        "type": "debug",
+        "z": "8af9695e.73126",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "foo",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 600,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d2e4815a.235dd",
+        "type": "debug",
+        "z": "8af9695e.73126",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 600,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "3b550efa.cdb4aa",
+        "type": "inject",
+        "z": "8af9695e.73126",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "foo",
+                "v": "cis boom bah",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "object copying cancelled",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 180,
+        "y": 220,
+        "wires": [
+            [
+                "7fa42302.298614"
+            ]
+        ]
+    },
+    {
+        "id": "8d7ff426.ad474",
+        "type": "comment",
+        "z": "8af9695e.73126",
+        "name": "last received msg object is copied to outputs",
+        "info": "",
+        "x": 210,
+        "y": 80,
+        "wires": []
+    }
+]
