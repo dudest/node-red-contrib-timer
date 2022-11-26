@@ -12,6 +12,7 @@
     "delay"
   ],
   "node-red": {
+    "version": ">=1.0.0",
     "nodes": {
       "timer": "timer.js"
     }
@@ -29,5 +30,8 @@
   "bugs": {
     "url": "https://github.com/dudest/node-red-contrib-timer/issues"
   },
-  "homepage": "https://github.com/dudest/node-red-contrib-timer#readme"
+  "homepage": "https://github.com/dudest/node-red-contrib-timer#readme",
+  "engines": {
+    "node": ">=10.0.0"
+  }
 }
