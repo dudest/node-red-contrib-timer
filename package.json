@@ -1,0 +1,13 @@
+{
+    "name"         : "node-red-contrib-timer",
+    "version"      : "1.0.0",
+    "description"  : "timer node",
+    "dependencies": {
+    },
+    "keywords": [ "node-red", "timer", "timing", "sequencing", "duty cycle", "delay" ],
+    "node-red"     : {
+        "nodes": {
+            "timer": "timer.js"
+        }
+    }
+}

@@ -1,0 +1,80 @@
+<script type="text/html" data-template-name="timer">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-topic"><i class="fa fa-tag"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Leave blank to inherit from input">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-timer"><i class="fa fa-clock-o"></i> Timer</label>
+        <input type="number" id="node-input-timer" placeholder="60">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-payloadOn"><i class="fa fa-tasks"></i> Payload On</label>
+        <input type="text" id="node-input-payloadOn">
+        <input type="hidden" id="node-input-payloadOnType">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-payloadOff"><i class="fa fa-tasks"></i> Payload Off</label>
+        <input type="text" id="node-input-payloadOff">
+        <input type="hidden" id="node-input-payloadOffType">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="timer">
+    <h2>A simple countdown timer.</h2>
+    <p><em>USAGE:</em></p>
+    <ul>
+        <li><strong>Boolean 'true'</strong> : Starts the timer. Resending <em>true</em> will restart the timer.</li>
+        <li><strong>Boolean 'false'</strong> : Stops the timer.</li>
+        <li><strong>Integer > 1</strong> : Sets the timer duration. Setting duration while the timer is running will only apply on next start.</li>
+    </ul>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('timer',{
+        category: 'function',
+        color: '#FF9900',
+        defaults: {
+            name: {value:""},
+            topic: {value:""},
+            timer: {value:""},
+            payloadOn: {
+                value: "",
+                validate: RED.validators.typedInput('payloadOnType')
+            },
+            payloadOnType: {value: ""},
+            payloadOff: {
+                value: "",  
+                validate: RED.validators.typedInput('payloadOffType')
+            },
+            payloadOffType: {value: ""}
+        },
+        inputs:1,
+        outputs:2,
+        outputLabels: ["state", "timer"],
+        icon: "timer.svg",
+        label: function() {
+            return this.name||"timer";
+        },
+        oneditprepare: function() {
+            $("#node-input-payloadOn").typedInput({
+                type:'bool',
+                types:['str', 'num', 'bool', 'json', 'bin', 'date'],
+                typeField: "#node-input-payloadOnType"
+            });
+
+            $("#node-input-payloadOff").typedInput({
+                type:'bool',
+                types:['str', 'num', 'bool', 'json', 'bin', 'date'],
+                typeField: "#node-input-payloadOffType"
+            });
+        }
+    });
+</script>
