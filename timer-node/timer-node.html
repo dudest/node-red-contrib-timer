@@ -1,4 +1,4 @@
-<script type="text/html" data-template-name="timer">
+<script type="text/html" data-template-name="timer-node">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -27,7 +27,7 @@
     </div>
 </script>
 
-<script type="text/html" data-help-name="timer">
+<script type="text/html" data-help-name="timer-node">
     <h2>A simple countdown timer.</h2>
     <p><em>USAGE:</em></p>
     <ul>
@@ -38,7 +38,7 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('timer',{
+    RED.nodes.registerType('timer-node',{
         category: 'function',
         color: '#FF9900',
         defaults: {

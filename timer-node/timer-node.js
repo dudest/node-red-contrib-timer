@@ -135,5 +135,5 @@ module.exports = function(RED) {
             stopTimer(msg, send);
         });
     }
-    RED.nodes.registerType("timer",timer);
+    RED.nodes.registerType("timer-node",timer);
 }

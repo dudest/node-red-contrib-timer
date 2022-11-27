@@ -1,6 +1,6 @@
 {
   "name": "@dudest/node-red-contrib-timer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "timer node",
   "dependencies": {},
   "keywords": [
@@ -14,10 +14,10 @@
   "node-red": {
     "version": ">=1.0.0",
     "nodes": {
-      "timer": "timer.js"
+      "timer": "timer-node/timer-node.js"
     }
   },
-  "main": "timer.js",
+  "main": "timer-node/timer-node.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
