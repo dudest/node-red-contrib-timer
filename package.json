@@ -1,5 +1,5 @@
 {
-  "name": "@dudest/node-red-contrib-timer",
+  "name": "node-red-contrib-timer",
   "version": "1.0.2",
   "description": "timer node",
   "dependencies": {},
