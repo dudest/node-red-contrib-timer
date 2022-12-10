@@ -39,7 +39,7 @@
 
 <script type="text/javascript">
     RED.nodes.registerType('timer-node',{
-        category: 'function',
+        category: 'timing',
         color: '#FF9900',
         defaults: {
             name: {value:""},
@@ -61,7 +61,7 @@
         outputLabels: ["state", "timer"],
         icon: "timer.svg",
         label: function() {
-            return this.name||"timer";
+            return this.name||"timer-node";
         },
         oneditprepare: function() {
             $("#node-input-payloadOn").typedInput({
