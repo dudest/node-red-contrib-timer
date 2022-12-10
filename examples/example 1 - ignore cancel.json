@@ -2,7 +2,7 @@
     {
         "id": "38a5c6e.079893a",
         "type": "tab",
-        "label": "timer ignore cancel",
+        "label": "ignore cancel",
         "disabled": false,
         "info": ""
     },
@@ -65,7 +65,7 @@
         "y": 196,
         "wires": [
             [
-                "cef7e1ee.595258"
+                "d96dea31904032b8"
             ]
         ]
     },
@@ -90,7 +90,7 @@
         "y": 136,
         "wires": [
             [
-                "cef7e1ee.595258"
+                "d96dea31904032b8"
             ]
         ]
     },
@@ -113,17 +113,27 @@
         ]
     },
     {
-        "id": "cef7e1ee.595258",
-        "type": "timer",
+        "id": "225ff94.486e486",
+        "type": "comment",
+        "z": "38a5c6e.079893a",
+        "name": "Incoming message topic can be copied over to the output.",
+        "info": "",
+        "x": 250,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "d96dea31904032b8",
+        "type": "timer-node",
         "z": "38a5c6e.079893a",
         "name": "",
         "topic": "",
         "timer": "5",
-        "payloadOn": "true",
+        "payloadOn": "false",
         "payloadOnType": "bool",
-        "payloadOff": "false",
+        "payloadOff": "true",
         "payloadOffType": "bool",
-        "x": 330,
+        "x": 310,
         "y": 160,
         "wires": [
             [
@@ -135,13 +145,13 @@
         ]
     },
     {
-        "id": "225ff94.486e486",
+        "id": "bd55ac20a78e44fc",
         "type": "comment",
         "z": "38a5c6e.079893a",
-        "name": "using topic to ignore expiry playload when cancelled by user",
+        "name": "This example uses a function node to filter out the expiry payload when timer is cancelled.",
         "info": "",
-        "x": 300,
-        "y": 60,
+        "x": 350,
+        "y": 80,
         "wires": []
     }
 ]

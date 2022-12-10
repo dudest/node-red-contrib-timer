@@ -2,33 +2,9 @@
     {
         "id": "8af9695e.73126",
         "type": "tab",
-        "label": "timer msg propegation",
+        "label": "msg property propagation",
         "disabled": false,
         "info": ""
-    },
-    {
-        "id": "7fa42302.298614",
-        "type": "timer",
-        "z": "8af9695e.73126",
-        "name": "",
-        "topic": "",
-        "timer": "5",
-        "payloadOn": "true",
-        "payloadOnType": "bool",
-        "payloadOff": "false",
-        "payloadOffType": "bool",
-        "x": 390,
-        "y": 160,
-        "wires": [
-            [
-                "3a0fe194.c88de6",
-                "40a132b2.d74a8c",
-                "d2e4815a.235dd"
-            ],
-            [
-                "c830b39e.c0c1"
-            ]
-        ]
     },
     {
         "id": "43d996ab.f0fa48",
@@ -56,11 +32,11 @@
         "topic": "object copying",
         "payload": "true",
         "payloadType": "bool",
-        "x": 210,
+        "x": 190,
         "y": 140,
         "wires": [
             [
-                "7fa42302.298614"
+                "1421f228d1843b9b"
             ]
         ]
     },
@@ -77,7 +53,7 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 590,
+        "x": 610,
         "y": 280,
         "wires": []
     },
@@ -94,7 +70,7 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 610,
+        "x": 630,
         "y": 140,
         "wires": []
     },
@@ -111,7 +87,7 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 600,
+        "x": 620,
         "y": 200,
         "wires": []
     },
@@ -128,7 +104,7 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 600,
+        "x": 620,
         "y": 80,
         "wires": []
     },
@@ -158,11 +134,11 @@
         "topic": "object copying cancelled",
         "payload": "false",
         "payloadType": "bool",
-        "x": 180,
+        "x": 160,
         "y": 220,
         "wires": [
             [
-                "7fa42302.298614"
+                "1421f228d1843b9b"
             ]
         ]
     },
@@ -170,9 +146,43 @@
         "id": "8d7ff426.ad474",
         "type": "comment",
         "z": "8af9695e.73126",
-        "name": "last received msg object is copied to outputs",
+        "name": "Message properties are copied over to the output.",
         "info": "",
-        "x": 210,
+        "x": 200,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "1421f228d1843b9b",
+        "type": "timer-node",
+        "z": "8af9695e.73126",
+        "name": "",
+        "topic": "",
+        "timer": "5",
+        "payloadOn": "false",
+        "payloadOnType": "bool",
+        "payloadOff": "true",
+        "payloadOffType": "bool",
+        "x": 410,
+        "y": 180,
+        "wires": [
+            [
+                "d2e4815a.235dd",
+                "3a0fe194.c88de6",
+                "40a132b2.d74a8c"
+            ],
+            [
+                "c830b39e.c0c1"
+            ]
+        ]
+    },
+    {
+        "id": "c81e85b84437fd8a",
+        "type": "comment",
+        "z": "8af9695e.73126",
+        "name": "only msg.payload is changed.",
+        "info": "",
+        "x": 140,
         "y": 80,
         "wires": []
     }

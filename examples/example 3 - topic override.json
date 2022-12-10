@@ -2,32 +2,9 @@
     {
         "id": "3f3d6774.cce2f",
         "type": "tab",
-        "label": "timer topic overide",
+        "label": "topic override",
         "disabled": false,
         "info": ""
-    },
-    {
-        "id": "6eed61c1.f7a888",
-        "type": "timer",
-        "z": "3f3d6774.cce2f",
-        "name": "",
-        "topic": "overide topic",
-        "timer": "5",
-        "payloadOn": "true",
-        "payloadOnType": "bool",
-        "payloadOff": "false",
-        "payloadOffType": "bool",
-        "x": 370,
-        "y": 140,
-        "wires": [
-            [
-                "5d48ca08.c9c664",
-                "edfec9d6.4e066"
-            ],
-            [
-                "4e8c7759.a6b17"
-            ]
-        ]
     },
     {
         "id": "c11b7d9c.021958",
@@ -50,11 +27,11 @@
         "topic": "ignored",
         "payload": "true",
         "payloadType": "bool",
-        "x": 190,
+        "x": 150,
         "y": 140,
         "wires": [
             [
-                "6eed61c1.f7a888"
+                "bf0781a1230c42ac"
             ]
         ]
     },
@@ -79,11 +56,11 @@
         "topic": "ignored",
         "payload": "false",
         "payloadType": "bool",
-        "x": 190,
+        "x": 150,
         "y": 220,
         "wires": [
             [
-                "6eed61c1.f7a888"
+                "bf0781a1230c42ac"
             ]
         ]
     },
@@ -100,8 +77,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 520,
-        "y": 80,
+        "x": 560,
+        "y": 100,
         "wires": []
     },
     {
@@ -117,8 +94,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 510,
-        "y": 240,
+        "x": 550,
+        "y": 260,
         "wires": []
     },
     {
@@ -134,18 +111,41 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 530,
-        "y": 140,
+        "x": 570,
+        "y": 160,
         "wires": []
     },
     {
         "id": "d9fa71cd.4df948",
         "type": "comment",
         "z": "3f3d6774.cce2f",
-        "name": "topic override in timer properties",
+        "name": "When topic is defined in node properties it overrides the incoming message topic.",
         "info": "",
-        "x": 170,
-        "y": 80,
+        "x": 320,
+        "y": 40,
         "wires": []
+    },
+    {
+        "id": "bf0781a1230c42ac",
+        "type": "timer-node",
+        "z": "3f3d6774.cce2f",
+        "name": "",
+        "topic": "override topic",
+        "timer": "5",
+        "payloadOn": "false",
+        "payloadOnType": "bool",
+        "payloadOff": "true",
+        "payloadOffType": "bool",
+        "x": 350,
+        "y": 160,
+        "wires": [
+            [
+                "5d48ca08.c9c664",
+                "edfec9d6.4e066"
+            ],
+            [
+                "4e8c7759.a6b17"
+            ]
+        ]
     }
 ]
