@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-timer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "timer node",
   "dependencies": {},
   "keywords": [
@@ -26,7 +26,7 @@
     "url": "git+https://github.com/dudest/node-red-contrib-timer.git"
   },
   "author": "alexandre matheson",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dudest/node-red-contrib-timer/issues"
   },
