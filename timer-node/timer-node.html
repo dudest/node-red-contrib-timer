@@ -61,7 +61,7 @@
         outputLabels: ["state", "timer"],
         icon: "timer.svg",
         label: function() {
-            return this.name||"timer-node";
+            return this.name || this.topic || "timer-node";
         },
         oneditprepare: function() {
             $("#node-input-payloadOn").typedInput({
