@@ -1,3 +1,10 @@
+[![platform](https://img.shields.io/badge/platform-Node--RED-red)](https://nodered.org)
+![npm](https://img.shields.io/npm/v/node-red-contrib-timer.svg)
+![license](https://img.shields.io/npm/l/node-red-contrib-timer.svg)
+![Npm package total downloads](https://badgen.net/npm/dt/node-red-contrib-timer)
+![github-issues](https://img.shields.io/github/issues/dudest/node-red-contrib-timer.svg)
+
+
 # node-red-contrib-timer #
 
 node-red-contrib-timer is a rudementary timer.
