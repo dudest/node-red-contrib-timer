@@ -11,7 +11,7 @@
 
     <div class="form-row">
         <label for="node-input-timer"><i class="fa fa-clock-o"></i> Timer</label>
-        <input type="number" id="node-input-timer" placeholder="60">
+        <input type="number" id="node-input-timer">
     </div>
 
     <div class="form-row">
@@ -42,19 +42,19 @@
         category: 'timing',
         color: '#FF9900',
         defaults: {
-            name: {value:""},
-            topic: {value:""},
-            timer: {value:""},
+            name: { value:"" },
+            topic: { value:"" },
+            timer: { value:5 },
             payloadOn: {
-                value: "",
+                value: true,
                 validate: RED.validators.typedInput('payloadOnType')
             },
-            payloadOnType: {value: ""},
+            payloadOnType: { value: "bool" },
             payloadOff: {
-                value: "",  
+                value: false,  
                 validate: RED.validators.typedInput('payloadOffType')
             },
-            payloadOffType: {value: ""}
+            payloadOffType: { value: "bool" }
         },
         inputs:1,
         outputs:2,
