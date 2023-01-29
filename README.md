@@ -38,7 +38,7 @@ $ npm install node-red-contrib-timer
 
 ### Configuration Pane
 
-![properties pane](images/img_properties.png)
+![properties edit dialog](images/img_properties.png)
 
 ### Node input
 
