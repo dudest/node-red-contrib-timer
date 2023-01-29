@@ -12,12 +12,12 @@
     "delay"
   ],
   "node-red": {
-    "version": ">=1.0.0",
+    "version": ">=3.0.1",
     "nodes": {
-      "timer": "timer-node/timer-node.js"
+      "timer-node": "src/timer-node.js"
     }
   },
-  "main": "timer-node/timer-node.js",
+  "main": "src/timer-node.js",
   "scripts": {
     "test": "mocha \"test/**/*_spec.js\""
   },
@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/dudest/node-red-contrib-timer#readme",
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=12.13.0"
   },
   "devDependencies": {
     "mocha": "^9.2.2",
