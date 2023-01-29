@@ -87,4 +87,4 @@ When *topic* is defined in the node properties, incoming *msg.topic* is override
 
 - [ ] Improve documention
 - [ ] unit testing
-- [x] publish workflow (run tests, publish release, publish package, publish package to NPM)
+- [X] publish workflow (run tests, publish release, publish package, publish package to NPM)
