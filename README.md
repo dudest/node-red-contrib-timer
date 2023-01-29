@@ -1,9 +1,8 @@
 [![platform](https://img.shields.io/badge/platform-Node--RED-red)](https://nodered.org)
-![npm](https://img.shields.io/npm/v/node-red-contrib-timer.svg)
-![license](https://img.shields.io/npm/l/node-red-contrib-timer.svg)
-![Npm package total downloads](https://badgen.net/npm/dt/node-red-contrib-timer)
-![github-issues](https://img.shields.io/github/issues/dudest/node-red-contrib-timer.svg)
-
+[![npm package version](https://img.shields.io/npm/v/node-red-contrib-timer)](https://www.npmjs.com/package/node-red-contrib-timer)
+![license](https://img.shields.io/npm/l/node-red-contrib-timer)
+[![Npm package total downloads](https://badgen.net/npm/dt/node-red-contrib-timer)](https://www.npmjs.com/package/node-red-contrib-timer)
+[![github-issues](https://img.shields.io/github/issues/dudest/node-red-contrib-timer)](https://github.com/dudest/node-red-contrib-timer/issues)
 
 # node-red-contrib-timer
 
