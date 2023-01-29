@@ -28,7 +28,7 @@ describe('timer-node node', function () {
         });
     });
 
-    it('include pass topic to output', (done) => {
+    it('should pass input msg.topic to output', (done) => {
         var flow = [
             { id: "n1", type: "timer-node", name: "timer-node", wires: [["n2"]] },
             { id: "n2", type: "helper" }
@@ -48,7 +48,7 @@ describe('timer-node node', function () {
         });
     });
 
-    it('Override topic when defined in timer-node edit properties dialog', (done) => {
+    it('should override topic when defined in timer-node edit properties dialog', (done) => {
         var flow = [
             { id: "n1", type: "timer-node", name: "timer-node", topic: "override", wires: [["n2"]] },
             { id: "n2", type: "helper" }
@@ -65,6 +65,26 @@ describe('timer-node node', function () {
                 }
             });
             n1.receive({ topic: "input message", payload: true });
+        });
+    });
+
+    it('should set timer when input is an integer', (done) => {
+        var flow = [
+            { id: "n1", type: "timer-node", name: "timer-node", timer: 60, wires: [[],["n2"]] },
+            { id: "n2", type: "helper" }
+        ];
+        helper.load(timerNode, flow, () => {
+            var n2 = helper.getNode("n2");
+            var n1 = helper.getNode("n1");
+            n2.on("input", function (msg) {
+                try {
+                    msg.should.have.property('payload', 60);
+                    done();
+                } catch (err) {
+                    done(err);
+                }
+            });
+            n1.receive({ payload: 60 });
         });
     });
 });
