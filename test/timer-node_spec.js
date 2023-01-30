@@ -70,7 +70,7 @@ describe('timer-node node', function () {
 
     it('should set timer when input is an integer', (done) => {
         var flow = [
-            { id: "n1", type: "timer-node", name: "timer-node", timer: 60, wires: [[],["n2"]] },
+            { id: "n1", type: "timer-node", name: "timer-node", wires: [[],["n2"]] },
             { id: "n2", type: "helper" }
         ];
         helper.load(timerNode, flow, () => {
@@ -85,6 +85,46 @@ describe('timer-node node', function () {
                 }
             });
             n1.receive({ payload: 60 });
+        });
+    });
+
+    it('should start time when input msg.payload is true', (done) => {
+        var flow = [
+            { id: "n1", type: "timer-node", name: "timer-node", payloadOn: true, payloadOnType: "bool", payloadOff: false, payloadOffType: "bool", wires: [["n2"]] },
+            { id: "n2", type: "helper" }
+        ];
+        helper.load(timerNode, flow, () => {
+            var n2 = helper.getNode("n2");
+            var n1 = helper.getNode("n1");
+            n2.on("input", function (msg) {
+                try {
+                    msg.should.have.property('payload', true);
+                    done();
+                } catch (err) {
+                    done(err);
+                }
+            });
+            n1.receive({ payload: true });
+        });
+    });
+
+    it('should stop time when input msg.payload is false', (done) => {
+        var flow = [
+            { id: "n1", type: "timer-node", name: "timer-node", payloadOn: true, payloadOnType: "bool", payloadOff: false, payloadOffType: "bool", wires: [["n2"]] },
+            { id: "n2", type: "helper" }
+        ];
+        helper.load(timerNode, flow, () => {
+            var n2 = helper.getNode("n2");
+            var n1 = helper.getNode("n1");
+            n2.on("input", function (msg) {
+                try {
+                    msg.should.have.property('payload', false);
+                    done();
+                } catch (err) {
+                    done(err);
+                }
+            });
+            n1.receive({ payload: false });
         });
     });
 });
