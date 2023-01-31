@@ -14,8 +14,8 @@ node-red-contrib-timer is a rudementary timer.
 
 ## Prerequisites
 
-* [Node.js](https://nodejs.org/en/) v10.0.0 or newer
-* [Node-RED](https://nodered.org) v1.0.0 or newer
+* [Node.js](https://nodejs.org/en/) v12.13.0 or newer
+* [Node-RED](https://nodered.org) v3.0.1 or newer
 
 ## Installation
 
